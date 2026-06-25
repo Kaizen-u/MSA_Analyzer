@@ -13,7 +13,7 @@ def run_muscle_msa(input_path, output_path):
     """Runs the system-level MUSCLE command."""
     # NOTE: Using -in and -out for MUSCLE v3.8 (Default on Streamlit Cloud's Debian server)
     # If testing locally on Windows with MUSCLE v5, change these to "-align" and "-output"
-    cmd = ["muscle", "-in", input_path, "-out", output_path]
+    cmd = ["muscle", "-align", input_path, "-output", output_path]
     try:
         subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as e:
